@@ -1,0 +1,10 @@
+"use strict";
+exports.__esModule = true;
+exports.ListCategoriesController = void 0;
+var listCategoriesController_1 = require("./listCategoriesController");
+var listCategoriesUseCase_1 = require("./listCategoriesUseCase");
+var categories_repository_1 = require("../../respositories/implementations/categories.repository");
+var categoriesRepository = categories_repository_1.CategoriesRepository.getInstance();
+var ListCategoriesUseCase = new listCategoriesUseCase_1.listCategoriesUseCase(categoriesRepository);
+var ListCategoriesController = new listCategoriesController_1.listCategoriesController(ListCategoriesUseCase);
+exports.ListCategoriesController = ListCategoriesController;

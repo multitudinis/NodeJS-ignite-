@@ -1,0 +1,9 @@
+yarn init
+yarn add express
+yarn add @types/express -D
+yarn add typescript -D
+tsc --init (yarn tsc)
+yarn add eslint -D
+yarn eslint --init
+yarn add ts-node-dev -D
+yarn add uuid

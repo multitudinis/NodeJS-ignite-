@@ -1,0 +1,10 @@
+"use strict";
+exports.__esModule = true;
+exports.createCategoryController = void 0;
+var categories_repository_1 = require("../../respositories/implementations/categories.repository");
+var createCategoryController_1 = require("./createCategoryController");
+var createCategoryUseCase_1 = require("./createCategoryUseCase");
+var categoriesRepository = categories_repository_1.CategoriesRepository.getInstance();
+var CreateCategoryUseCase = new createCategoryUseCase_1.createCategoryUseCase(categoriesRepository);
+var createCategoryController = new createCategoryController_1.CreateCategoryController(CreateCategoryUseCase);
+exports.createCategoryController = createCategoryController;
