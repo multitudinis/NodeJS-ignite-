@@ -62,6 +62,7 @@ var importCategoryUseCase = /** @class */ (function () {
                 });
             }); })
                 .on("end", function () {
+                fs_1["default"].promises.unlink(file.path);
                 resolve(categories);
             })
                 .on("error", function (err) {
