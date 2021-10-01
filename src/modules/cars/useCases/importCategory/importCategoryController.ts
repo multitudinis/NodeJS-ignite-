@@ -3,10 +3,10 @@ import { importCategoryUseCase } from "./importCategoryUseCase"
 
 class importCategoryController{
     constructor(private ImportCategoryUseCase: importCategoryUseCase){}
-    handle (request: Request, response: Response): Response{
+async handle (request: Request, response: Response): Promise<Response>{
         const {file} = request
         
-        this.ImportCategoryUseCase.execute(file)
+        await this.ImportCategoryUseCase.execute(file)
 
         return response.send()
     }

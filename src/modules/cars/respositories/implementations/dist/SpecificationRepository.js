@@ -1,7 +1,7 @@
 "use strict";
 exports.__esModule = true;
 exports.SpecificationsRepository = void 0;
-var Specification_1 = require("../../model/Specification");
+var Specification_1 = require("../../entities/Specification");
 var SpecificationsRepository = /** @class */ (function () {
     function SpecificationsRepository() {
         this.Specifications = [];
