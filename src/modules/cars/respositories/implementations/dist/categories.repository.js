@@ -1,7 +1,7 @@
 "use strict";
 exports.__esModule = true;
 exports.CategoriesRepository = void 0;
-var category_1 = require("../../model/category");
+var category_1 = require("../../entities/category");
 var CategoriesRepository = /** @class */ (function () {
     function CategoriesRepository() {
         this.categories = [];

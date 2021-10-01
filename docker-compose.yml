@@ -5,7 +5,6 @@ services:
     image: postgres
     container_name: database_postgres
     restart: always
-    
     environment:
       - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=init
@@ -16,7 +15,6 @@ services:
   app:
     build: .
     container_name: nodes
-    
     volumes:
       - .:/usr/app
     network_mode: host
