@@ -1,4 +1,5 @@
 import { Request, Response } from "express"
+import { container } from "tsyringe"
 import { createCategoryUseCase } from "./createCategoryUseCase"
 
 interface IRequest {
@@ -6,13 +7,13 @@ interface IRequest {
     description: string
 }
 class CreateCategoryController {
-    
-    constructor(private CreateCategoryUseCase: createCategoryUseCase){}
 
     async handle(request: Request, response: Response): Promise<Response>{
         const {name, description} = request.body
-    
-        await this.CreateCategoryUseCase.execute({name, description})
+        
+        const CreateCategoryUseCase = container.resolve(createCategoryUseCase)
+
+        await CreateCategoryUseCase.execute({name, description})
     
         return response.status(201).send()
     }
