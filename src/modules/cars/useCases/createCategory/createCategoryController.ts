@@ -1,11 +1,8 @@
 import { Request, Response } from "express"
+import 'reflect-metadata';
 import { container } from "tsyringe"
 import { createCategoryUseCase } from "./createCategoryUseCase"
 
-interface IRequest {
-    name: string
-    description: string
-}
 class CreateCategoryController {
 
     async handle(request: Request, response: Response): Promise<Response>{

@@ -5,6 +5,7 @@
     "username": "docker",
     "password": "init",
     "database": "nodes",
+    "synchronize": true,
     "entities" : ["./src/modules/cars/entities/*.ts"],
     "migrations": ["./src/database/migrations/*.ts"],
     "cli": {

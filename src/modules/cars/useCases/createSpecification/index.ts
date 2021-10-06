@@ -1,3 +1,4 @@
+/*
 import { createSpecificationController } from "./createSpecificationController";
 import { CreateSpecificationUseCase } from "./createSpecificationUseCase";
 import {SpecificationsRepository} from "../../respositories/implementations/SpecificationRepository"
@@ -7,3 +8,4 @@ const createSpecificationUseCase = new CreateSpecificationUseCase(specifications
 const CreateSpecificationController = new createSpecificationController(createSpecificationUseCase)
 
 export { CreateSpecificationController }
+*/

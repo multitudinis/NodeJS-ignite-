@@ -1,3 +1,4 @@
+/*
 import { listCategoriesController } from "./listCategoriesController";
 import { listCategoriesUseCase } from "./listCategoriesUseCase";
 import { CategoriesRepository } from "../../respositories/implementations/categories.repository";
@@ -10,3 +11,4 @@ export default():listCategoriesController => {
     
     return ListCategoriesController
 }
+*/
