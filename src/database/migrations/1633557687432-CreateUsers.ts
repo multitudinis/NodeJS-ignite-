@@ -1,4 +1,3 @@
-/*
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
 export class CreateUsers1633557687432 implements MigrationInterface {
@@ -17,11 +16,6 @@ export class CreateUsers1633557687432 implements MigrationInterface {
                         type: "varchar"
                     },
                     {
-                        name: "username",
-                        type: "varchar",
-                        isUnique: true
-                    },
-                    {
                         name: "password",
                         type: "varchar"
                     },
@@ -36,7 +30,7 @@ export class CreateUsers1633557687432 implements MigrationInterface {
                     {
                         name: "isAdmin",
                         type: "boolean",
-                        default: false
+                        default: "false"
                     },
                     {
                         name: "created_at",
@@ -53,4 +47,3 @@ export class CreateUsers1633557687432 implements MigrationInterface {
     }
 
 }
-*/
