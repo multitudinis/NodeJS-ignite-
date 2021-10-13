@@ -21,8 +21,12 @@ class User {
     @Column('boolean', {default: false})
     isAdmin: boolean = false
 
+    @Column()
+    avatar: string
+    
     @CreateDateColumn()
     created_at: Date
+    
 
     constructor(){
         if(!this.id){
