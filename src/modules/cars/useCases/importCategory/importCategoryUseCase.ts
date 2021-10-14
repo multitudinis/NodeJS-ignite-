@@ -1,6 +1,6 @@
 import fs from "fs"
 import CsvParse from "csv-parse"
-import { ICategoriesRepository } from "../../respositories/ICategoriesRepository"
+import { ICategoriesRepository } from "../../infra/typeorm/respositories/ICategoriesRepository"
 import { inject, injectable } from "tsyringe"
 
 

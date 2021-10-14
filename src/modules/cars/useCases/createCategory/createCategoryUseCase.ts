@@ -1,6 +1,7 @@
+import "reflect-metadata"
 import { inject, injectable } from "tsyringe";
-import { AppError } from "../../../../errors/appError";
-import { ICategoriesRepository } from "../../respositories/ICategoriesRepository";
+import { AppError } from "../../../../shared/errors/appError";
+import { ICategoriesRepository } from "../../infra/typeorm/respositories/ICategoriesRepository";
 
 interface IRequest {
     name: string
