@@ -21,4 +21,4 @@ export class alterUserAddAvatar1634071419028 implements MigrationInterface {
     
 }
 
-*/
+*/ 

@@ -1,0 +1,11 @@
+"use strict";
+exports.__esModule = true;
+var tsyringe_1 = require("tsyringe");
+var UsersRepository_1 = require("../../modules/accounts/infra/typeorm/repositories/implementations/UsersRepository");
+var carsRepository_1 = require("../../modules/cars/infra/typeorm/respositories/implementations/carsRepository");
+var categories_repository_1 = require("../../modules/cars/infra/typeorm/respositories/implementations/categories.repository");
+var SpecificationRepository_1 = require("../../modules/cars/infra/typeorm/respositories/implementations/SpecificationRepository");
+tsyringe_1.container.registerSingleton("CategoriesRepository", categories_repository_1.CategoriesRepository);
+tsyringe_1.container.registerSingleton("SpecificationsRepository", SpecificationRepository_1.SpecificationsRepository);
+tsyringe_1.container.registerSingleton("UsersRepository", UsersRepository_1.UsersRepository);
+tsyringe_1.container.registerSingleton("carsRepository", carsRepository_1.carsRepository);
