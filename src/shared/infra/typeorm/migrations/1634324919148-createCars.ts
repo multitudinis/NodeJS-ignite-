@@ -1,3 +1,4 @@
+/*
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
 export class createCars1634324919148 implements MigrationInterface {
@@ -71,3 +72,4 @@ export class createCars1634324919148 implements MigrationInterface {
     }
 
 }
+ */

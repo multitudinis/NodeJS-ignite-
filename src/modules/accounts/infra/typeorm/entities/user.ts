@@ -22,7 +22,7 @@ class User {
     isAdmin: boolean = false
 
     @Column()
-    avatar: string
+    avatar?: string
     
     @CreateDateColumn()
     created_at: Date
