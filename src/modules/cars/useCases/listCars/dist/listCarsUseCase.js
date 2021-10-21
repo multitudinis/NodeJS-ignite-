@@ -36,54 +36,25 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-exports.CarsRepositoryInMemory = void 0;
-var car_1 = require("../../entities/car");
-var CarsRepositoryInMemory = /** @class */ (function () {
-    function CarsRepositoryInMemory() {
-        this.cars = [];
+exports.listCarsUseCase = void 0;
+var listCarsUseCase = /** @class */ (function () {
+    function listCarsUseCase(CarsRepository) {
+        this.CarsRepository = CarsRepository;
     }
-    CarsRepositoryInMemory.prototype.create = function (_a) {
-        var name = _a.name, description = _a.description, daily_rate = _a.daily_rate, license_plate = _a.license_plate, fine_amount = _a.fine_amount, brand = _a.brand, category_id = _a.category_id;
+    listCarsUseCase.prototype.execute = function (_a) {
+        var category_id = _a.category_id, brand = _a.brand, name = _a.name;
         return __awaiter(this, void 0, Promise, function () {
-            var car;
+            var cars;
             return __generator(this, function (_b) {
-                car = new car_1.Car();
-                Object.assign(car, {
-                    name: name,
-                    description: description,
-                    daily_rate: daily_rate,
-                    license_plate: license_plate,
-                    fine_amount: fine_amount,
-                    brand: brand,
-                    category_id: category_id
-                });
-                this.cars.push(car);
-                return [2 /*return*/, car];
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.CarsRepository.findAvailable(category_id, brand, name)];
+                    case 1:
+                        cars = _b.sent();
+                        return [2 /*return*/, cars];
+                }
             });
         });
     };
-    CarsRepositoryInMemory.prototype.findByLicensePlate = function (license_plate) {
-        return __awaiter(this, void 0, Promise, function () {
-            return __generator(this, function (_a) {
-                return [2 /*return*/, this.cars.find(function (car) { return car.license_plate === license_plate; })];
-            });
-        });
-    };
-    CarsRepositoryInMemory.prototype.findAvailable = function (category_id, brand, name) {
-        return __awaiter(this, void 0, Promise, function () {
-            var all;
-            return __generator(this, function (_a) {
-                all = this.cars
-                    .filter(function (car) { return car.available === true; })
-                    .filter(function (car) {
-                    return (category_id && car.category_id === category_id) ||
-                        (brand && car.brand === brand) ||
-                        (name && car.name === name);
-                });
-                return [2 /*return*/, all];
-            });
-        });
-    };
-    return CarsRepositoryInMemory;
+    return listCarsUseCase;
 }());
-exports.CarsRepositoryInMemory = CarsRepositoryInMemory;
+exports.listCarsUseCase = listCarsUseCase;
