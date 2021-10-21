@@ -2,11 +2,11 @@
 exports.__esModule = true;
 exports.specificationsRoutes = void 0;
 var express_1 = require("express");
-var SpecificationRepository_1 = require("../modules/cars/respositories/implementations/SpecificationRepository");
-var createSpecification_1 = require("../modules/cars/useCases/createSpecification");
+var ensureAuthenticated_1 = require("../middleware/ensureAuthenticated");
+var createSpecificationController_1 = require("../../../../modules/cars/useCases/createSpecification/createSpecificationController");
+var ensureAdmin_1 = require("../middleware/ensureAdmin");
 var specificationsRoutes = express_1.Router();
 exports.specificationsRoutes = specificationsRoutes;
-var specificationsRepository = new SpecificationRepository_1.SpecificationsRepository();
-specificationsRoutes.post("/", function (request, response) {
-    return createSpecification_1.CreateSpecificationController.handle(request, response);
-});
+var CreateSpecificationController = new createSpecificationController_1.createSpecificationController();
+specificationsRoutes.use(ensureAuthenticated_1.ensureAuthenticated);
+specificationsRoutes.post("/", ensureAdmin_1.ensureAdmin, CreateSpecificationController.handle);
