@@ -63,12 +63,13 @@ describe("should list cars", function () {
                     return [4 /*yield*/, ListCars.execute({})];
                 case 2:
                     cars = _a.sent();
+                    console.log(cars);
                     expect(cars).toEqual([car]);
                     return [2 /*return*/];
             }
         });
     }); });
-    it("should be able to list all availables cars by name", function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("should be able to list all availables cars by brand", function () { return __awaiter(void 0, void 0, void 0, function () {
         var car, cars;
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -86,7 +87,29 @@ describe("should list cars", function () {
                     return [4 /*yield*/, ListCars.execute({ brand: "honda2" })];
                 case 2:
                     cars = _a.sent();
-                    console.log(car);
+                    expect(cars).toEqual([car]);
+                    return [2 /*return*/];
+            }
+        });
+    }); });
+    it("should be able to list all availables cars by name", function () { return __awaiter(void 0, void 0, void 0, function () {
+        var car, cars;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, carsRepositoryInMemory.create({
+                        "name": "gtx3",
+                        "description": "4 rodas",
+                        "daily_rate": 999,
+                        "license_plate": "qq1-322",
+                        "fine_amount": 2000,
+                        "brand": "honda3",
+                        "category_id": "5be71d1c-6e75-4b04-aecd-1272960f5bf0"
+                    })];
+                case 1:
+                    car = _a.sent();
+                    return [4 /*yield*/, ListCars.execute({ name: "gtx3" })];
+                case 2:
+                    cars = _a.sent();
                     expect(cars).toEqual([car]);
                     return [2 /*return*/];
             }
