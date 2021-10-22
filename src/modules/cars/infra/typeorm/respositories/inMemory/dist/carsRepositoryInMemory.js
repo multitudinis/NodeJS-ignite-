@@ -73,12 +73,14 @@ var CarsRepositoryInMemory = /** @class */ (function () {
         return __awaiter(this, void 0, Promise, function () {
             var all;
             return __generator(this, function (_a) {
-                all = this.cars
-                    .filter(function (car) { return car.available === true; })
-                    .filter(function (car) {
-                    return (category_id && car.category_id === category_id) ||
+                all = this.cars.filter(function (car) {
+                    if (car.available === true ||
                         (brand && car.brand === brand) ||
-                        (name && car.name === name);
+                        (category_id && car.category_id === category_id) ||
+                        (name && car.name === name)) {
+                        return car;
+                    }
+                    return null;
                 });
                 return [2 /*return*/, all];
             });

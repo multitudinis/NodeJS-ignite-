@@ -2,9 +2,9 @@ import { ICreateCarsDTO } from "../../../../dtos/ICreateCarsDTO";
 import { Car } from "../../entities/car";
 import { ICarsRepository } from "../ICarsRepository";
 
-class CarsRepositoryInMemory implements ICarsRepository{
+class CarsRepositoryInMemory implements ICarsRepository {
     cars: Car[] = []
-    
+
     async create({
         name,
         description,
@@ -13,9 +13,9 @@ class CarsRepositoryInMemory implements ICarsRepository{
         fine_amount,
         brand,
         category_id
-    }:ICreateCarsDTO): Promise<Car>{
+    }: ICreateCarsDTO): Promise<Car> {
         const car = new Car()
-        
+
         Object.assign(car, {
             name,
             description,
@@ -29,20 +29,23 @@ class CarsRepositoryInMemory implements ICarsRepository{
         return car
     }
     async findByLicensePlate(license_plate: string): Promise<Car> {
-        return this.cars.find((car)=> car.license_plate === license_plate)
+        return this.cars.find((car) => car.license_plate === license_plate)
     }
     async findAvailable(
         category_id?: string,
         brand?: string,
         name?: string
     ): Promise<Car[]> {
-        const all = this.cars
-        .filter((car)=> car.available === true)
-        .filter((car)=>
-        (category_id && car.category_id === category_id)||
-        (brand && car.brand === brand)||
-        (name && car.name === name)
-        )
+        const all = this.cars.filter((car) => {
+            if (car.available === true ||
+                (brand && car.brand === brand) ||
+                (category_id && car.category_id === category_id) ||
+                (name && car.name === name)
+            ) {
+                return car;
+            }
+            return null
+        })
         return all
     }
 }

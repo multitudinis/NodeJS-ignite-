@@ -56,7 +56,7 @@ describe("should list cars", function () {
                         "license_plate": "qq1-321",
                         "fine_amount": 2000,
                         "brand": "honda",
-                        "category_id": "5be71d1c-6e75-4b04-aecd-1272960f5bf0"
+                        "category_id": "aeb67dd2-9af4-40c1-a395-0698c4b9f2b3"
                     })];
                 case 1:
                     car = _a.sent();
